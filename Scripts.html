@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+ $(function() {
+    
+    $('.action').click(function() {
+       google.script.run.withSuccessHandler(function(text) {
+         if (text) {
+           $('.result').text('Result: ' + text);
+         } else {
+           $('.result').text('Please, select text to translate');
+         }
+       }).translate();
+    });   
+  });
+
+
